@@ -322,11 +322,19 @@
 		let is_muc_el = document.getElementById("is_muc");
 
 		let input = input_el.value;
+
+		if (input === "") {
+			const link = document.location.origin + document.location.pathname;
+			output_el.href = link;
+			output_el.innerText = link;
+			return;
+		}
+
 		let uri;
 
 		if (!input.startsWith("xmpp:")) {
 			uri = "xmpp:" + input;
-			if(is_muc_el.checked) {
+			if(is_muc_el.checked && !uri.includes("?join")) {
 				uri += "?join";
 			}
 			is_muc_el.disabled = false;
@@ -336,7 +344,15 @@
 			is_muc_el.checked = uri.endsWith("?join");
 		}
 
-		let encoded_uri = uri.substr(5).split("@").map(encodeURIComponent).join("@");
+		let encoded_uri;
+		if (uri.includes("@")) {
+			encoded_uri = uri.slice(5).split("@").map(encodeURIComponent).join("@");
+		} else {
+			if (!is_muc_el.checked && !uri.includes("?register")) {
+				uri += "?register";
+			}
+			encoded_uri = encodeURIComponent(uri.slice(5));
+		}
 
 		let link = document.location.origin + document.location.pathname + "#" + encoded_uri;
 		output_el.href = link;
