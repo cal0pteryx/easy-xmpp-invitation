@@ -31,6 +31,8 @@
   "recommend": "Here are the most commonly used clients for your platform:",
   "checkfulllist": "See the <a href='https://xmpp.org/software/clients/'>full list</a> of XMPP clients for other platforms and devices.",
   "xmppis": "XMPP is a provider-independent kind of instant messaging where a wide selection of clients and servers allows you to participate.",
+  "open-source": "This website is an open source project.",
+  "source-code": "Find the source code on GitHub.",
   "action-copy": "Copy to clipboard",
   "copy-success": "Copied!",
   "copy-failure": "Failed to copy to clipboard",
