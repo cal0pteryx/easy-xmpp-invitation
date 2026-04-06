@@ -306,11 +306,14 @@ a:hover {
 .w-full {
   width: 100%;
 }
+.text-center {
+  text-align: center;
+}
 .text-nowrap {
   text-wrap: nowrap;
 }
-.text-center {
-  text-align: center;
+.wrap-anywhere {
+  overflow-wrap: anywhere;
 }
 .truncate {
   text-overflow: ellipsis;
