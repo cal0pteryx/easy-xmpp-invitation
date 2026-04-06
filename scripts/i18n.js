@@ -12,6 +12,8 @@ i18n.on(I18nText.event.LOCALE_CHANGE, data => {
   let rtlLangs = 'ar, fa, he, ur'
   if (rtlLangs.includes(data.locale)) {
     document.querySelector('body').dir = 'rtl'
+  } else {
+    document.querySelector('body').dir = 'ltr'
   }
   rehash()
 })
